@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: energy-consumption-g15
+  labels:
+    app: energy-consumption-g15
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: energy-consumption-g15
+  template:
+    metadata:
+      labels:
+        app: energy-consumption-g15
+    spec:
+      nodeSelector:
+        placement: edge
+        type: g15
+      containers:
+      - name: ecs
+        image: serodioj/energy-consumption-service:latest
+        ports:
+        - containerPort: 8000
+          hostPort: 8000
+        env:
+        - name: hardware_config
+          value: "default"
