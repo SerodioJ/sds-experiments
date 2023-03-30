@@ -1,3 +1,3 @@
-# Self-distributing System experiments
+# Self-distributing Systems experiments
 
-This repository contains experiment scripts and results (CSV files and graphs) for a set of SDS experiments.
+This repository contains experiment scripts and results (CSV files) for a set of SDS experiments.
